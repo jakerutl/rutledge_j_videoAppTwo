@@ -1,4 +1,18 @@
 <section id="app">
+
+
+<h1>${ title }</h1>
+
+<div class="dropdown">
+  <button class="dropbtn">Genre</button>
+  <div class="dropdown-content">
+    <a href="#">Action</a>
+    <a href="#">Comedy</a>
+    <a href="#">Horror</a>
+    <a href="#">Romance</a>
+    <a href="#">Romcom</a>
+  </div>
+</div>
   <!-- <div class="movie-wrapper">
     <aside>
       <h4 class="movie-title">{{ defaultMovie.movies_title }}</h4>
@@ -14,7 +28,7 @@
   </div> -->
 
   <!-- load in all of the thumnails for each genre -->
-  <section class="genre-lists" v-for="genre in genres">
+  <section class="movies" v-for="genre in genres">
     <div v-if="genre.movies.length > 0">
       <div class="genre-item">
         <h6 class="genre-name">${ genre.name }</h6>

@@ -1,29 +1,50 @@
+<social-sharing url="https://vuejs.org/"
+title="The Progressive JavaScript Framework"
+description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
+quote="Vue is a progressive framework for building user interfaces."
+hashtags="vuejs,javascript,framework"
+twitter-user="vuejs"
+inline-template>
 <section id="video">
   <!-- back button here -->
   <div class="TrailerPage">
   <a href="/" class="back-button">
     <i class="far fa-arrow-alt-circle-left"></i>
   </a>
-  <video class="Trailers" autoplay>
-    <!-- remember to add all of the fallback sources here. -->
+  <br>
+  <br>
+  <video class="Trailers" controls>
     <source src="/video/{{ moviesrc }}" type="video/mp4">
   </video>
 
   <div class="VidInfo">
-    <h2 class="title">{{ defaultMovie.movies_title }}</h2>
+    <h2 class="title">{{movies_title}}</h2>
     <p> {{trailers.movies_storyline}}</p>
     <h3>{{trailers.movies_release}}</h3>
   </div>
+
+  <div class="media">
+  <a class="fb" href="#"><img src="/images/fb_logo.png" alt=""></a>
+  <a href="#"><img src="/images/in_logo.png" alt=""></a>
+  <a href="#"><img src="/images/t_logo.png" alt=""></a>
+  <social-sharing url="https://vuejs.org/" inline-template>
+    <div>
+      <network network="facebook">
+        <i class="fa fa-fw fa-facebook"></i> Facebook
+      </network>
+    </div>
+</social-sharing>
+</div>
+<!-- <br>
+<br> -->
   <!-- reviews go here -->
   <article class="comments" v-if="reviews.length > 0">
-    <div v-for="review in reviews">
+    <div class="commentSection" v-for="review in reviews">
       <!-- temporary vue component -->
-        <review-stars :value="review.comments_rating" :disabled="true"></review-stars>
+        <review-stars class="stars" :value="review.comments_rating" :disabled="true"></review-stars>
       <!-- end component -->
       <i class="post-date">${ review.comments_date }</i>
-      <p>
-        ${ review.comments_copy }
-      </p>
+      <p>  ${ review.comments_copy }</p>
     </div>
   </article>
 
@@ -33,7 +54,7 @@
     <span class="hidden movId">{{ movie }}</span>
     <review-stars v-model="numStars" :disabled="false"></review-stars>
     <textarea name="review" id="review" placeholder="What did you think?" v-model="review"></textarea>
-    <input type="submit" value="Submit your review!" v-on:click="addReview">
+    <input type="submit" value="SUBMIT" v-on:click="addReview">
   </aside>
 </div>
 </section>

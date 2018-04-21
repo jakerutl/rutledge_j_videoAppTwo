@@ -54,7 +54,7 @@ exports.get_one_movie = (req, res) => {
         moviesrc : req.params.movie,
         data : JSON.stringify(rows),
         mainpage : false,
-        videopage : true
+        videopage : true,
       });
     })
   })
