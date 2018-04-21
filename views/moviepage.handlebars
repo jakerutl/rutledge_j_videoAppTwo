@@ -1,13 +1,19 @@
 <section id="video">
   <!-- back button here -->
+  <div class="TrailerPage">
   <a href="/" class="back-button">
     <i class="far fa-arrow-alt-circle-left"></i>
   </a>
-  <video autoplay>
+  <video class="Trailers" autoplay>
     <!-- remember to add all of the fallback sources here. -->
     <source src="/video/{{ moviesrc }}" type="video/mp4">
   </video>
 
+  <div class="VidInfo">
+    <h2 class="title">{{ defaultMovie.movies_title }}</h2>
+    <p> {{trailers.movies_storyline}}</p>
+    <h3>{{trailers.movies_release}}</h3>
+  </div>
   <!-- reviews go here -->
   <article class="comments" v-if="reviews.length > 0">
     <div v-for="review in reviews">
@@ -29,4 +35,5 @@
     <textarea name="review" id="review" placeholder="What did you think?" v-model="review"></textarea>
     <input type="submit" value="Submit your review!" v-on:click="addReview">
   </aside>
+</div>
 </section>
