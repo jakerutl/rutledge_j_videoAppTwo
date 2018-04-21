@@ -1,11 +1,4 @@
-// .comments {
-// 	width: 45%; display: inline-block;
-//
-// 	 > div {
-// 		padding: 0 1em;
-// 		margin-bottom: 1.75em;
-// 	}
-// }
+
 
 #movie > video { margin-bottom: 1.5em; }
 
@@ -55,6 +48,7 @@
 
 
 	.star-rating { margin: 4px 0 10px 0; }
+
 }
 
 
@@ -131,8 +125,45 @@ margin: 0 auto;
 		border: 0.5px solid white;
 		opacity: 0.8;
 		padding: 15px;
+		.post-date{
+			color: #a52b25;
+			font-size: 12px;
+			display: block;
+			margin-bottom: 15px;
+		}
 		.stars{
 			margin-bottom: 10px;
 		}
 	}
+}
+
+.add-comment{
+	float: right;
+	textarea{
+		input::placeholder{
+			font-size: 14px;
+		}
+		width: 270px;
+		height: 100px;
+	}
+	input{
+		padding: 20px;
+		margin-top: 10px;
+		font-size: 16px;
+		font-family: Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		background-color: #1c1c1c;
+		border:  solid white 1px;
+		color: white;
+		cursor: pointer;
+		transition: 0.2s;
+		&:hover{
+			color: #1c1c1c;
+			background-color: white;
+		}
+	}
+}
+
+.review-heading{
+	color: #a52b25;
 }
